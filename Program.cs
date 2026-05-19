@@ -12,6 +12,9 @@ builder.Services.AddDbContext<FilmeContext>(opts =>
     opts.UseMySql(connectionString, new MySqlServerVersion
     (new Version(8, 0, 27))));
 
+builder.Services.
+    AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Add services to the container.
 
 builder.Services.AddControllers();
